@@ -5,45 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>數字密碼系統</title>
     <style>
+        :root {
+            --bg-color: #1a1a1a;
+            --text-color: #e0e0e0;
+            --accent-color: #00b4d8;
+            --input-bg: #2a2a2a;
+        }
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            padding: 20px;
-            max-width: 600px;
+            padding: 15px;
+            max-width: 100%;
             margin: 0 auto;
+            background-color: var(--bg-color);
+            color: var(--text-color);
         }
         h1 {
             text-align: center;
-            color: #333;
+            color: var(--accent-color);
+            font-size: 24px;
+            margin-bottom: 20px;
         }
         textarea {
-            width: 100%;
+            width: calc(100% - 20px);
             padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            border: 1px solid var(--accent-color);
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 14px;
+            background-color: var(--input-bg);
+            color: var(--text-color);
+        }
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
         }
         button {
             width: 48%;
             padding: 10px;
-            margin-bottom: 10px;
-            background-color: #007AFF;
-            color: white;
+            background-color: var(--accent-color);
+            color: var(--bg-color);
             border: none;
             border-radius: 5px;
-            font-size: 16px;
+            font-size: 14px;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
         }
-        button:last-child {
-            float: right;
+        button:active {
+            background-color: #0077be;
         }
     </style>
 </head>
 <body>
     <h1>數字密碼系統</h1>
-    <textarea id="input" rows="4" placeholder="輸入文字或密文"></textarea>
-    <button onclick="encrypt()">加密</button>
-    <button onclick="decrypt()">解密</button>
-    <textarea id="output" rows="4" readonly></textarea>
+    <textarea id="input" rows="3" placeholder="輸入文字或密文"></textarea>
+    <div class="button-container">
+        <button onclick="encrypt()">加密</button>
+        <button onclick="decrypt()">解密</button>
+    </div>
+    <textarea id="output" rows="3" readonly></textarea>
     <script src="script.js"></script>
 </body>
 </html>
