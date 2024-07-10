@@ -2,14 +2,48 @@
 <html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>數字密碼系統</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            padding: 20px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            width: 48%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #007AFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button:last-child {
+            float: right;
+        }
+    </style>
 </head>
 <body>
     <h1>數字密碼系統</h1>
-    <textarea id="input" rows="4" cols="50" placeholder="輸入文字或密文"></textarea><br>
+    <textarea id="input" rows="4" placeholder="輸入文字或密文"></textarea>
     <button onclick="encrypt()">加密</button>
-    <button onclick="decrypt()">解密</button><br>
-    <textarea id="output" rows="4" cols="50" readonly></textarea>
+    <button onclick="decrypt()">解密</button>
+    <textarea id="output" rows="4" readonly></textarea>
     <script src="script.js"></script>
 </body>
 </html>
